@@ -1,0 +1,20 @@
+name: WagaOmanApp
+
+options:
+  bundleIdPrefix: com.wagaoman
+  deploymentTarget:
+    iOS: "18.0"
+
+targets:
+  WagaOmanApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: WagaOmanApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.wagaoman.app
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: WagaOmanApp/Info.plist

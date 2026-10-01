@@ -1,0 +1,18 @@
+workflows:
+  ios_unsigned:
+    name: Waga Oman - iOS test build
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      xcode: latest
+    scripts:
+      - name: Install XcodeGen
+        script: brew install xcodegen
+      - name: Generate Xcode project
+        script: xcodegen generate
+      - name: Build iOS app without signing
+        script: |
+          xcodebuild             -project "WagaOmanApp.xcodeproj"             -scheme "WagaOmanApp"             -configuration Debug             -destination 'generic/platform=iOS'             CODE_SIGNING_ALLOWED=NO             build
+    artifacts:
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - /tmp/xcodebuild_logs/*.log
