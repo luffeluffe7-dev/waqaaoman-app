@@ -11,10 +11,12 @@ targets:
     platform: iOS
     deploymentTarget: "18.0"
     sources:
-      - path: WagaOmanApp
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.wagaoman.app
-        SWIFT_VERSION: "5.0"
-        TARGETED_DEVICE_FAMILY: "1"
-        INFOPLIST_FILE: WagaOmanApp/Info.plist
+      
+path: ContentView.swift
+path: WagaOmanApp.swift
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.wagaoman.app
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    INFOPLIST_FILE: Info.plist
